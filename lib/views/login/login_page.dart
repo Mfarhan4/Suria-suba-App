@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:suria_saba_app/views/forget_password_page.dart';
+import 'package:suria_saba_app/views/login/forget_password_page.dart';
 import 'package:suria_saba_app/widgets/company_name_widget.dart';
 
-import '../widgets/custom_button_widget.dart';
+import '../../widgets/custom_button_widget.dart';
+import '../buttom_bar_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class LoginPage extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const SizedBox(height: 35,),
-              const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20),
+              const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20,titleColor: Colors.pinkAccent,),
               const Expanded(child: Divider()),
               SizedBox(
                 height: 50,
@@ -123,8 +124,8 @@ class LoginPage extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (_) => const ForgetPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => const BottomBArPage()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(left: 60.0,right: 60),

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:suria_saba_app/views/home_page.dart';
-import 'package:suria_saba_app/views/before_login_page.dart';
+import 'package:flutter/services.dart';
+import 'package:suria_saba_app/views/login/before_login_page.dart';
 
 import 'configer/configer.dart';
 
 void main() {
+
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
   // This widgets is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       navigatorKey: NavigationService.navigatorKey,
       debugShowCheckedModeBanner: false,

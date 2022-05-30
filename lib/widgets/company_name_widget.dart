@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CompanyName extends StatelessWidget {
-  const CompanyName({Key? key,required this.nameColor,required this.nameSize,required this.titleSize}) : super(key: key);
+  const CompanyName({Key? key,required this.nameColor,required this.nameSize,required this.titleSize,required this.titleColor}) : super(key: key);
  final Color nameColor;
  final double nameSize;
  final double titleSize;
+ final Color titleColor;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,7 +50,7 @@ class CompanyName extends StatelessWidget {
             Text(
               "             Your First Stop Shopping Mall",
               style: GoogleFonts.allan(
-                  color: nameColor,
+                  color: titleColor,
                   fontSize: titleSize,
                   fontWeight: FontWeight.bold,
                   wordSpacing: 1,height: 1.2),

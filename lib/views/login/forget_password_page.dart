@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/company_name_widget.dart';
+import '../../widgets/company_name_widget.dart';
 
 class ForgetPage extends StatelessWidget {
   const ForgetPage({Key? key}) : super(key: key);
@@ -35,7 +35,7 @@ class ForgetPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 35,),
                  
-                const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20),
+                const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20,titleColor: Colors.pinkAccent,),
                 const Expanded(child: Divider()),
                 SizedBox(
                   height: 50,

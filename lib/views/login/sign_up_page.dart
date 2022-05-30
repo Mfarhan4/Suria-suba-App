@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:suria_saba_app/widgets/custom_button_widget.dart';
 
-import '../widgets/company_name_widget.dart';
+import '../../widgets/company_name_widget.dart';
+import '../buttom_bar_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -47,9 +48,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     height: 20,
                   ),
                   const CompanyName(
-                      nameColor: Colors.white, nameSize: 55, titleSize: 15),
+                      nameColor: Colors.white, nameSize: 60, titleSize: 15,titleColor: Colors.pinkAccent,),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   SizedBox(
                     height: 50,
@@ -59,7 +60,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: "                  First Name",
+                          hintText: "                          First Name",
 
                           hintStyle: const TextStyle(
                             color: Colors.black,
@@ -90,7 +91,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: "                 Last Name",
+                          hintText: "                          Last Name",
 
                           hintStyle: const TextStyle(
                             color: Colors.black,
@@ -120,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: "                  Email",
+                          hintText: "                             Email",
 
                           hintStyle: const TextStyle(
                             color: Colors.black,
@@ -150,7 +151,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: "                 phone Number",
+                          hintText: "                        phone Number",
 
                           hintStyle: const TextStyle(
                             color: Colors.black,
@@ -247,7 +248,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: "                 password",
+                          hintText: "                           password",
                           hintStyle: const TextStyle(
                             color: Colors.black,
                           ),
@@ -290,7 +291,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: "               Confirm password",
+                          hintText: "                     Confirm password",
 
                           hintStyle: const TextStyle(
                             color: Colors.black,
@@ -375,7 +376,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(
                     height: 35,
                   ),
-                  PrimaryButton(onTaps: () {}, text: "Sign Up"),
+                  PrimaryButton(onTaps: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => const BottomBArPage()));
+                  }, text: "Sign Up"),
                 ],
               ),
             ),
