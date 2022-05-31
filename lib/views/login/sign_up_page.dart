@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:suria_saba_app/widgets/custom_button_widget.dart';
 
 import '../../widgets/company_name_widget.dart';
-import '../buttom_bar_page.dart';
+import '../bottom_bar_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     height: 20,
                   ),
                   const CompanyName(
-                      nameColor: Colors.white, nameSize: 60, titleSize: 15,titleColor: Colors.pinkAccent,),
+                      nameColor: Colors.white, nameSize: 60, titleSize: 15,titleColor: Colors.white,),
                   const SizedBox(
                     height: 30,
                   ),

@@ -6,7 +6,8 @@ import 'package:suria_saba_app/views/login/sign_up_page.dart';
 import 'package:suria_saba_app/widgets/company_name_widget.dart';
 import 'package:suria_saba_app/widgets/custom_button_widget.dart';
 
-import '../buttom_bar_page.dart';
+import '../../themes/palette.dart';
+import '../bottom_bar_page.dart';
 
 class BeforeLoginPage extends StatelessWidget {
   const BeforeLoginPage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class BeforeLoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
+      value: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       ),
       child: Scaffold(
@@ -42,12 +43,12 @@ class BeforeLoginPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 32.0),
                 child: Row(
-                  children: const [
+                  children:  [
                     CompanyName(
                       nameSize: 90,
-                      nameColor: Colors.pinkAccent,
+                      nameColor: Palette.color,
                       titleSize: 20,
-                      titleColor: Colors.pinkAccent,
+                      titleColor: Palette.color,
                     ),
                   ],
                 ),
@@ -56,7 +57,7 @@ class BeforeLoginPage extends StatelessWidget {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const BottomBArPage()));
+                      MaterialPageRoute(builder: (_) => const LoginPage()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(left: 117.0, right: 117),
@@ -69,14 +70,14 @@ class BeforeLoginPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(width: 1, color: Colors.pink),
                           ),
-                          child: const SizedBox(
+                          child:  SizedBox(
                               height: 55,
                               width: 80,
                               child: Center(
                                   child: Text(
                                 'Login',
                                 style: TextStyle(
-                                    color: Colors.pink,
+                                    color: Palette.color,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20),
                               ))),

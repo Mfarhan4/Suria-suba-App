@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
+import 'directory_page.dart';
 import 'home_page.dart';
 
 class BottomBArPage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _BottomBArPageState extends State<BottomBArPage> {
     final PersistentTabController _controller=PersistentTabController(initialIndex: 0);
   final List<Widget> _screen=[
     const HomePage(),
-    const Center(child: Text("Directory")),
+    const DirectoryPage(),
     const Center(child: Text("Scan")),
     const Center(child: Text("Vouchers")),
     const Center(child: const Text("Account"))

@@ -9,48 +9,63 @@ final   Function onTaps;
   @override
   Widget build(BuildContext context) {
     return
-      InkWell(
-        onTap: (){
-          onTaps();
-        },
-        child: Row(
+      Row(
 
-        mainAxisAlignment:MainAxisAlignment.center,
-        children: [
-        Container(
-          width: 180,
+      mainAxisAlignment:MainAxisAlignment.center,
+      children: [
+      Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: const [BoxShadow(color:Color.fromRGBO(211 , 29, 130, 0.25), offset: Offset(4, 4))],
 
-          decoration: BoxDecoration(
-        gradient: LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-         // stops: const [0.3,0.7 ,0.6,1.0,0.7],
-
-        colors: [
-         // Colors.white,
-          Colors.pinkAccent.shade200,
-          Colors.pink.shade400,
-          Colors.redAccent.shade400.withOpacity(0.77),
-          Colors.pink.shade500,
-
-          Colors.pink.shade700,
-
-         // Colors.pinkAccent.shade200,
-         // Colors.pinkAccent.shade200,
-
-        ],
         ),
+        child: Material(
+           borderRadius: BorderRadius.circular(20),
+          child: Ink(
+            width: 180,
 
 
-        borderRadius: BorderRadius.circular(20),
-      ),
-          child: const SizedBox(
-            height: 55,
-            width: 80,
-              child: Center(child: Text('Sign Up', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),))),
-        )
+            decoration: BoxDecoration(
+          gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
 
-    ],),
-      );
+        stops: [0.03,0.04 ,0.2,0.4,0.92,0.98],
+
+          colors: [
+           // Colors.white,
+
+
+
+
+
+
+            Color.fromRGBO(255, 128, 161, 1),
+            Color.fromRGBO(255, 112, 156, 1),
+            Color.fromRGBO(255, 51, 141, 1),
+            Color.fromRGBO(255, 14, 131, 1),
+            Color.fromRGBO(255, 0, 128, 1),
+            Color.fromRGBO(208, 46, 128, 1),
+          ],
+          ),
+
+
+          borderRadius: BorderRadius.circular(20),
+        ),
+            child: InkWell(
+              onTap: () {
+                onTaps();
+
+              },
+              child: const SizedBox(
+                height: 55,
+                width: 80,
+                  child: Center(child: Text('Sign Up', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),))),
+            ),
+          ),
+        ),
+      )
+
+    ],);
   }
 }

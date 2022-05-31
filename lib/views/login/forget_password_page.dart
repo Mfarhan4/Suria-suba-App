@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../themes/palette.dart';
 import '../../widgets/company_name_widget.dart';
 
 class ForgetPage extends StatelessWidget {
@@ -35,7 +36,7 @@ class ForgetPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 35,),
                  
-                const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20,titleColor: Colors.pinkAccent,),
+                const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20,titleColor: Colors.white,),
                 const Expanded(child: Divider()),
                 SizedBox(
                   height: 50,
@@ -75,7 +76,7 @@ class ForgetPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment:MainAxisAlignment.center,
                   children:  [
-                    Container(child: Text("Enter your email to receive an email to reset\n your  password.",style: TextStyle(color: Colors.white,fontSize: 15,),maxLines: 2,)),
+                    Container(child: const Text("Enter your email to receive an email to reset\n your  password.",style: TextStyle(color: Colors.white,fontSize: 15,),maxLines: 2,)),
                   ],),
                 const SizedBox(
                   height: 20,
@@ -97,14 +98,14 @@ class ForgetPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(27),
                               border: Border.all(width: 1, color: Colors.pink),
                             ),
-                            child: const SizedBox(
+                            child:  SizedBox(
                                 height: 55,
                                 width: 80,
                                 child: Center(
                                     child: Text(
                                       'Reset Password',
                                       style: TextStyle(
-                                          color: Colors.pink,
+                                          color: Palette.color,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                     ))),

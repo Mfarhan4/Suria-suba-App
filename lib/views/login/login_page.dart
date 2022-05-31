@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:suria_saba_app/themes/palette.dart';
 import 'package:suria_saba_app/views/login/forget_password_page.dart';
 import 'package:suria_saba_app/widgets/company_name_widget.dart';
 
 import '../../widgets/custom_button_widget.dart';
-import '../buttom_bar_page.dart';
+import '../bottom_bar_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class LoginPage extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.end,
             children: [
               const SizedBox(height: 35,),
-              const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20,titleColor: Colors.pinkAccent,),
+              const CompanyName(nameColor: Colors.white, nameSize: 80, titleSize: 20,titleColor: Colors.white,),
               const Expanded(child: Divider()),
               SizedBox(
                 height: 50,
@@ -139,14 +140,14 @@ class LoginPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(27),
                             border: Border.all(width: 1, color: Colors.pink),
                           ),
-                          child: const SizedBox(
+                          child:  SizedBox(
                               height: 55,
                               width: 80,
                               child: Center(
                                   child: Text(
                                 'Login',
                                 style: TextStyle(
-                                    color: Colors.pink,
+                                    color: Palette.color,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20),
                               ))),

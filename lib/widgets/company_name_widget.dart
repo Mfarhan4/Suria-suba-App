@@ -23,8 +23,7 @@ class CompanyName extends StatelessWidget {
             style: TextStyle(
                 color: nameColor,
                 fontSize: nameSize,
-                fontWeight: FontWeight.bold,
-                wordSpacing: 2,height: 1.0),
+                fontWeight: FontWeight.bold,),
           ),
         ],
       ),
