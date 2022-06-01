@@ -73,9 +73,14 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         color: Colors.white,
         child: Stack(
+
           children: [
+
             Container(
-              color: Palette.color,
+              alignment: Alignment.topCenter,
+              height: ScreenConfig.screenHeight,
+              width: ScreenConfig.screenWidth,
+              child: Image.asset("assets/unnamed.png"),
             ),
             Positioned.fill(
               top: ScreenConfig.topPadding,
