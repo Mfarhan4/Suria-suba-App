@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:suria_saba_app/views/bottom_bar_page.dart';
 import 'package:suria_saba_app/views/login/before_login_page.dart';
 import 'package:suria_saba_app/views/onbording_page.dart';
+import 'package:suria_saba_app/views/test_page.dart';
+import 'package:suria_saba_app/widgets/custom_appBar.dart';
 
 import 'configer/configer.dart';
 
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home:  const BottomBArPage(),
+      home:  TestPage(),
     );
   }
 }
