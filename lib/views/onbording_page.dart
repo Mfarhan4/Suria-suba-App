@@ -133,9 +133,9 @@ class _OnBoardingPageState extends State<OnBoardingPage>
                   });
                 },
                 children: [
-                  getView("Shop", "assets/shoping.png", context),
-                  getView("Orange", "assets/dining.png", context),
-                  getView("Enjoy", "assets/cinema.png", context),
+                  getView("Shop", "assets/images/shoping.png", context),
+                  getView("Orange", "assets/images/dining.png", context),
+                  getView("Enjoy", "assets/images/cinema.png", context),
                 ],
               ),
             ),

@@ -3,6 +3,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
 import 'package:suria_saba_app/widgets/company_name_widget.dart';
+import 'package:suria_saba_app/widgets/custom_appBar.dart';
 
 import '../themes/palette.dart';
 
@@ -70,411 +71,354 @@ class _HomePageState extends State<HomePage> {
     ScreenConfig().init(context);
 
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: Container(
         color: Colors.white,
-        child: Stack(
+        child: ListView(
+          shrinkWrap: true,
+
+
+
+          scrollDirection: Axis.vertical,
 
           children: [
-
-            Container(
-              alignment: Alignment.topCenter,
-              height: ScreenConfig.screenHeight,
-              width: ScreenConfig.screenWidth,
-              child: Image.asset("assets/unnamed.png"),
+            const SizedBox(
+              height: 10,
             ),
-            Positioned.fill(
-              top: ScreenConfig.topPadding,
-              child: Container(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30)),
-                  color: Colors.white,
-                ),
-                height: ScreenConfig.screenHeight,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Container(
-                      width: ScreenConfig.screenWidth,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(25),
-                            topLeft: Radius.circular(25)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey, //New
-                              blurRadius: 15.0,
-                              offset: Offset(0, 5))
-                        ],
-                      ),
-                      child: Column(
-                        children:  [
-                          const SizedBox(
-                            height: 9,
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20),
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.pinkAccent
+                                      .withOpacity(0.1),
+                                  // spreadRadius: 2,
+                                  blurRadius: 7,
+                                  offset: const Offset(0,
+                                      0), // changes position of shadow
+                                ),
+                              ]),
+                          // height: 300,
+
+                          width: ScreenConfig.blockWidth *80,
+                          height: ScreenConfig.blockHeight *36,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(25),
+                            child: CarouselSlider(
+                                items: photoList1,
+                                options:
+                                CarouselOptions(
+                                  autoPlay: true,
+                                  disableCenter: true,
+                                  // height: ScreenConfig.blockHeight *50,
+                                  viewportFraction: 1.0,
+                                  aspectRatio: 1,
+                                  enlargeCenterPage: false,
+
+                                  onPageChanged: (index, reason) {
+                                    debugPrint(index.toString());
+                                    setState(() {
+                                      _index = index;
+                                    });
+                                    debugPrint(" save $_index");
+                                  },
+                                  pageSnapping: true,
+
+                                  //  height: 260
+                                )),
                           ),
-                          CompanyName(
-                            nameColor:Palette.color,
-                            titleSize: 10,
-                            nameSize: 35,
-                            titleColor: Colors.black,
-                          ),
-                        ],
+                        ),
                       ),
+                      Positioned.fill(
+                          child: Container(
+                              width: ScreenConfig.screenWidth,
+                              //padding: const EdgeInsets.only(left: 50,right: 40),
+                              // height: ScreenConfig.screenHeight,
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: DotsIndicator(
+                                    dotsCount: photos.length,
+                                    position: _index.toDouble(),
+                                    decorator: DotsDecorator(
+                                        spacing: const EdgeInsets.only(
+                                            left: 3, right: 3),
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius
+                                                .circular(12)),
+                                        activeColor: Colors.white,
+                                        color: Colors.grey,
+                                        size:
+                                        const Size.fromRadius(6.0),
+                                        activeSize:
+                                        const Size.fromRadius(6.0),
+                                        activeShape:
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                            BorderRadius
+                                                .circular(
+                                                12.0))),
+                                  )))),
+
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    "YEAR END SALE 20-31 DEC",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Expanded(
-                      child: ListView(
-                        shrinkWrap: true,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Divider(
+                    color: Palette.color,
+                    thickness: 1.5,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: Column(
+                children: [
+                  Row(
 
-                        scrollDirection: Axis.vertical,
-
-                        children: [
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20.0, right: 20),
-                            child: Column(
-                              children: [
-                                Stack(
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.center,
-                                      child: Container(
-
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(25),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.pinkAccent
-                                                    .withOpacity(0.1),
-                                                // spreadRadius: 2,
-                                                blurRadius: 7,
-                                                offset: const Offset(0,
-                                                    0), // changes position of shadow
-                                              ),
-                                            ]),
-                                        // height: 300,
-
-                                        width: ScreenConfig.blockWidth *80,
-                                        height: ScreenConfig.blockHeight *36,
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(25),
-                                          child: CarouselSlider(
-                                              items: photoList1,
-                                              options: CarouselOptions(
-                                                autoPlay: true,
-                                                disableCenter: true,
-                                               // height: ScreenConfig.blockHeight *50,
-                                                viewportFraction: 1.0,
-                                                aspectRatio: 1,
-                                                enlargeCenterPage: false,
-
-                                                onPageChanged: (index, reason) {
-                                                  debugPrint(index.toString());
-                                                  setState(() {
-                                                    _index = index;
-                                                  });
-                                                  debugPrint(" save $_index");
-                                                },
-                                                pageSnapping: true,
-
-                                                //  height: 260
-                                              )),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned.fill(
-                                        child: Container(
-                                            width: ScreenConfig.screenWidth,
-                                            //padding: const EdgeInsets.only(left: 50,right: 40),
-                                            // height: ScreenConfig.screenHeight,
-                                            alignment: Alignment.bottomCenter,
-                                            child: Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: DotsIndicator(
-                                                  dotsCount: photos.length,
-                                                  position: _index.toDouble(),
-                                                  decorator: DotsDecorator(
-                                                      spacing: const EdgeInsets.only(
-                                                          left: 3, right: 3),
-                                                      shape: RoundedRectangleBorder(
-                                                          borderRadius: BorderRadius
-                                                              .circular(12)),
-                                                      activeColor: Colors.white,
-                                                      color: Colors.grey,
-                                                      size:
-                                                          const Size.fromRadius(6.0),
-                                                      activeSize:
-                                                          const Size.fromRadius(6.0),
-                                                      activeShape:
-                                                          RoundedRectangleBorder(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0))),
-                                                )))),
-
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                const Text(
-                                  "YEAR END SALE 20-31 DEC",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                 Divider(
-                                  color: Palette.color,
-                                  thickness: 1.5,
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-
-                              ],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "  Happening",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Palette.color),
+                      ),
+                      InkWell(
+                        onTap: () {
+                        },
+                        child: const Text(
+                          "See All >>   ",
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  SizedBox(
+                    // color: Colors.orange,
+                    height: 135,
+                    width: ScreenConfig.screenWidth,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: SizedBox(
+                              // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
+                              height: ScreenConfig.blockHeight * 44,
+                              // height: 195,
+                              width: ScreenConfig.blockWidth * 44,
+                              //  width: ScreenConfig.screenWidth,
+                              child: Image.network(
+                                "${photos[index]}",fit: BoxFit.cover,),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 18.0),
-                            child: Column(
-                              children: [
-                                Row(
+                        );
+                      },
+                      itemCount: photos.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                    ),
+                  ),
+                  const SizedBox(height: 30,),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "  Food & Beverage",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Palette.color),
+                      ),
+                      InkWell(
+                        onTap: () {
+                        },
+                        child: const Text(
+                          "See All >>   ",
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 3,),
+                  Container(
 
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                     Text(
-                                      "  Happening",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: Palette.color),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                      },
-                                      child: const Text(
-                                        "See All >>   ",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 3,
-                                ),
-                                SizedBox(
-                                  // color: Colors.orange,
-                                  height: 135,
-                                  width: ScreenConfig.screenWidth,
-                                  child: ListView.builder(
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding: const EdgeInsets.only(left: 8.0, right: 8),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(12),
-                                          child: SizedBox(
-                                            // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
-                                            height: ScreenConfig.blockHeight * 44,
-                                            // height: 195,
-                                            width: ScreenConfig.blockWidth * 44,
-                                            //  width: ScreenConfig.screenWidth,
-                                            child: Image.network(
-                                                "${photos[index]}",fit: BoxFit.cover,),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    itemCount: photos.length,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.horizontal,
-                                  ),
-                                ),
-                                const SizedBox(height: 30,),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                     Text(
-                                      "  Food & Beverage",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: Palette.color),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                      },
-                                      child: const Text(
-                                        "See All >>   ",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(height: 3,),
-                                Container(
-
-                                  color: Colors.white,
-                                  height: 135,
-                                  width: ScreenConfig.screenWidth,
-                                  child: ListView.builder(
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding: const EdgeInsets.only(left: 8.0, right: 8),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(12),
-                                          child: SizedBox(
-                                            // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
-                                            height: ScreenConfig.blockHeight * 44,
-                                            // height: 195,
-                                            width: ScreenConfig.blockWidth * 44,
-                                            //  width: ScreenConfig.screenWidth,
-                                            child: Image.network(
-                                              "${photos[index]}",fit: BoxFit.cover,),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    itemCount: photos.length,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.horizontal,
-                                  ),
-                                ),
-                                const SizedBox(height: 30,),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                     Text(
-                                      "  Food & Beverage",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color:Palette.color),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                      },
-                                      child: const Text(
-                                        "See All >>   ",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(height: 3,),
-                                Container(
-
-                                  color: Colors.white,
-                                  height: 135,
-                                  width: ScreenConfig.screenWidth,
-                                  child: ListView.builder(
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding: const EdgeInsets.only(left: 8.0, right: 8),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(12),
-                                          child: SizedBox(
-                                            // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
-                                            height: ScreenConfig.blockHeight * 44,
-                                            // height: 195,
-                                            width: ScreenConfig.blockWidth * 44,
-                                            //  width: ScreenConfig.screenWidth,
-                                            child: Image.network(
-                                              "${photos[index]}",fit: BoxFit.cover,),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    itemCount: photos.length,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.horizontal,
-                                  ),
-                                ),
-                                const SizedBox(height: 30,),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                     Text(
-                                      "  Beauty & Wellness",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                          color: Palette.color),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                      },
-                                      child: const Text(
-                                        "See All >>   ",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(height: 3,),
-                                Container(
-
-                                  color: Colors.white,
-                                  height: 135,
-                                  width: ScreenConfig.screenWidth,
-                                  child: ListView.builder(
-                                    itemBuilder: (context, index) {
-                                      return Padding(
-                                        padding: const EdgeInsets.only(left: 8.0, right: 8),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(12),
-                                          child: SizedBox(
-                                            // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
-                                            height: ScreenConfig.blockHeight * 44,
-                                            // height: 195,
-                                            width: ScreenConfig.blockWidth * 44,
-                                            //  width: ScreenConfig.screenWidth,
-                                            child: Image.network(
-                                              "${photos[index]}",fit: BoxFit.cover,),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    itemCount: photos.length,
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.horizontal,
-                                  ),
-                                ),
-                              ],
+                    color: Colors.white,
+                    height: 135,
+                    width: ScreenConfig.screenWidth,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: SizedBox(
+                              // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
+                              height: ScreenConfig.blockHeight * 44,
+                              // height: 195,
+                              width: ScreenConfig.blockWidth * 44,
+                              //  width: ScreenConfig.screenWidth,
+                              child: Image.network(
+                                "${photos[index]}",fit: BoxFit.cover,),
                             ),
                           ),
-                        ],
-                      ),
+                        );
+                      },
+                      itemCount: photos.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
                     ),
+                  ),
+                  const SizedBox(height: 30,),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "  Food & Beverage",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color:Palette.color),
+                      ),
+                      InkWell(
+                        onTap: () {
+                        },
+                        child: const Text(
+                          "See All >>   ",
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 3,),
+                  Container(
 
+                    color: Colors.white,
+                    height: 135,
+                    width: ScreenConfig.screenWidth,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: SizedBox(
+                              // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
+                              height: ScreenConfig.blockHeight * 44,
+                              // height: 195,
+                              width: ScreenConfig.blockWidth * 44,
+                              //  width: ScreenConfig.screenWidth,
+                              child: Image.network(
+                                "${photos[index]}",fit: BoxFit.cover,),
+                            ),
+                          ),
+                        );
+                      },
+                      itemCount: photos.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                    ),
+                  ),
+                  const SizedBox(height: 30,),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "  Beauty & Wellness",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Palette.color),
+                      ),
+                      InkWell(
+                        onTap: () {
+                        },
+                        child: const Text(
+                          "See All >>   ",
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 3,),
+                  Container(
 
-                  ],
-                ),
+                    color: Colors.white,
+                    height: 135,
+                    width: ScreenConfig.screenWidth,
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: SizedBox(
+                              // decoration: BoxDecoration(borderRadius: BorderRadius.circular(35)) ,
+                              height: ScreenConfig.blockHeight * 44,
+                              // height: 195,
+                              width: ScreenConfig.blockWidth * 44,
+                              //  width: ScreenConfig.screenWidth,
+                              child: Image.network(
+                                "${photos[index]}",fit: BoxFit.cover,),
+                            ),
+                          ),
+                        );
+                      },
+                      itemCount: photos.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
+        ) ,
+
         ),
-      ),
+
     );
   }
 }

@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
             alignment: Alignment.topCenter,
             height: ScreenConfig.screenHeight,
             width: ScreenConfig.screenWidth,
-            child: Image.asset("assets/unnamed.png"),
+            child: Image.asset("assets/images/statusbar.png"),
           ),
 
           Positioned.fill(

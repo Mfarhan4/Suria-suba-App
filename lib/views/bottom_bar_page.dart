@@ -19,7 +19,7 @@ class _BottomBArPageState extends State<BottomBArPage> {
     const DirectoryPage(),
     const Center(child: Text("Scan")),
     const Center(child: Text("Vouchers")),
-    const Center(child: const Text("Account"))
+    const Center(child: Text("Account"))
 
   ];
   final List<PersistentBottomNavBarItem>  _item =[

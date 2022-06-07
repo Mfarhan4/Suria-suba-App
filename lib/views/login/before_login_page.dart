@@ -90,13 +90,16 @@ class BeforeLoginPage extends StatelessWidget {
               const SizedBox(
                 height: 29,
               ),
-              PrimaryButton(
-                onTaps: () {
-                  debugPrint("signUp Page ");
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const SignUpPage()));
-                },
-                text: 'Sign Up ',
+              Padding(
+                padding: const EdgeInsets.only(left: 115.0,right: 115),
+                child: PrimaryButton(
+                  onTaps: () {
+                    debugPrint("signUp Page ");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const SignUpPage()));
+                  },
+                  text: 'Sign Up ',
+                ),
               ),
               const SizedBox(
                 height: 40,

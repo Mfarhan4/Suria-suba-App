@@ -376,9 +376,12 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(
                     height: 35,
                   ),
-                  PrimaryButton(onTaps: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => const BottomBArPage()));
-                  }, text: "Sign Up"),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 70.0,right: 70),
+                    child: PrimaryButton(onTaps: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => const BottomBArPage()));
+                    }, text: "Sign Up"),
+                  ),
                 ],
               ),
             ),

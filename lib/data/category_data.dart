@@ -8,19 +8,19 @@ import '../suba_icon_icons.dart';
 class CategoryClass {
 
    static  List data=[
-     {"name":"FASHION","icon":SubaIcon.fashion,'image':"assets/category/fashion.png",},
-     {"name":"TIMEPIECE & JEWELLERY","icon":SubaIcon.watch_gem,"image":"assets/category/time.png",},
-     {"name":"BEAUTY & WELLNESS","icon":SubaIcon.beauty,"image":"assets/category/beauty.png",},
-     {"name":"LIFESTYLE","icon":SubaIcon.groceries,"image":"assets/category/lifestyle.png",},
+     {"name":"FASHION","icon":SubaIcon.fashion,'image':"assets/images/category/fashion.png",},
+     {"name":"TIMEPIECE & JEWELLERY","icon":SubaIcon.watch_gem,"image":"assets/images/category/time.png",},
+     {"name":"BEAUTY & WELLNESS","icon":SubaIcon.beauty,"image":"assets/images/category/beauty.png",},
+     {"name":"LIFESTYLE","icon":SubaIcon.groceries,"image":"assets/images/category/lifestyle.png",},
 
-{"name":"CHILDREN & MATERNITY","icon":SubaIcon.toy,"image":"assets/category/children.png",},
-{"name":"SPORTS & OUTDOORS","icon":SubaIcon.sports,"image":"assets/category/sports.png",},
-{"name":"IT & TELECOMMUNICATION","icon":SubaIcon.devices,"image":"assets/category/it.png",},
-{"name":"FOOD & BEVERAGE","icon":SubaIcon.food,"image":"assets/category/food.png",},
-{"name":"GIFT & SOUVENIR","icon":SubaIcon.gift,"image":"assets/category/gifts.png",},
-{"name":"GROCERY","icon":SubaIcon.groceries,"image":"assets/category/grocery.png",},
-{"name":"ENTERTAINMENT","icon":SubaIcon.entertainment,"image":"assets/category/entertainment.png",},
-{"name":"DEPARTMENT STORE","icon":SubaIcon.cart,"image":"assets/category/cart.png",},
+{"name":"CHILDREN & MATERNITY","icon":SubaIcon.toy,"image":"assets/images/category/children.png",},
+{"name":"SPORTS & OUTDOORS","icon":SubaIcon.sports,"image":"assets/images/category/sports.png",},
+{"name":"IT & TELECOMMUNICATION","icon":SubaIcon.devices,"image":"assets/images/category/it.png",},
+{"name":"FOOD & BEVERAGE","icon":SubaIcon.food,"image":"assets/images/category/food.png",},
+{"name":"GIFT & SOUVENIR","icon":SubaIcon.gift,"image":"assets/images/category/gifts.png",},
+{"name":"GROCERY","icon":SubaIcon.groceries,"image":"assets/images/category/grocery.png",},
+{"name":"ENTERTAINMENT","icon":SubaIcon.entertainment,"image":"assets/images/category/entertainment.png",},
+{"name":"DEPARTMENT STORE","icon":SubaIcon.cart,"image":"assets/images/category/cart.png",},
 
 
 
