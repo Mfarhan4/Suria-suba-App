@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
 import 'package:suria_saba_app/themes/palette.dart';
-import 'package:suria_saba_app/widgets/custom_appBar.dart';
+import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 
 import '../../configer/screen_config.dart';
 import '../../widgets/photo_chose_widget.dart';
@@ -127,17 +127,22 @@ class _ScanPageState extends State<ScanPage> {
                               contentPadding: EdgeInsets.only(
                                   top: 5, bottom: 5, left: 10, right: 10),
                               filled: true,
-                              prefixIcon: Icon(Icons.arrow_downward,color: Colors.black,),
-
+                              prefixIcon: Icon(
+                                SubaIcon.drop_down,
+                                color: Colors.black,
+                                size: 9,
+                              ),
                               fillColor: Colors.white,
                               enabledBorder: OutlineInputBorder(
-                                  borderRadius:BorderRadius.only(topRight: const Radius.circular(12),bottomRight: Radius.circular(12)),
-
-                                  borderSide: BorderSide(
-                                      color: Colors.transparent)),
+                                  borderRadius: BorderRadius.only(
+                                      topRight: const Radius.circular(12),
+                                      bottomRight: Radius.circular(12)),
+                                  borderSide:
+                                      BorderSide(color: Colors.transparent)),
                               focusedBorder: OutlineInputBorder(
-                                  borderRadius:BorderRadius.only(topRight: const Radius.circular(12),bottomRight: Radius.circular(12)),
-
+                                  borderRadius: BorderRadius.only(
+                                      topRight: const Radius.circular(12),
+                                      bottomRight: Radius.circular(12)),
                                   borderSide: BorderSide(
                                       color: Colors.transparent)),
                             ),

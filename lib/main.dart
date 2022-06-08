@@ -6,16 +6,15 @@ import 'package:suria_saba_app/views/bottom_bar_page.dart';
 
 import 'configer/configer.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     //systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.transparent, // status bar color
   ));
+
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => ImagesProvider()),
-  ],
-  child: const MyApp()));
-
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +23,10 @@ class MyApp extends StatelessWidget {
   // This widgets is the root of your application.
   @override
   Widget build(BuildContext context) {
-
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp(
       navigatorKey: NavigationService.navigatorKey,
       debugShowCheckedModeBanner: false,

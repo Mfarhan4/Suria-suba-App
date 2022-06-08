@@ -26,13 +26,12 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
         ],
       ),
       child: SizedBox(
-          height: ScreenConfig.blockHeight * 15.5,
+        height: ScreenConfig.blockHeight * 15.5,
           child: Stack(children: [
 
             Container(
               alignment: Alignment.topCenter,
               height: ScreenConfig.screenHeight,
-              width: ScreenConfig.screenWidth,
               child: Image.asset("assets/images/statusbar.png"),
             ),
 
@@ -56,13 +55,18 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
               ),
             ),
             Positioned(
-                top:ScreenConfig.topPadding *2,
+                top: ScreenConfig.topPadding * 2,
                 left: 10,
-                child:enableBackButton? InkWell(
-                    onTap: (){
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(Icons.arrow_back,color: Colors.black,)):const SizedBox()),
+                child: enableBackButton
+                    ? InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: Palette.color,
+                        ))
+                    : const SizedBox()),
           ],),
         ),
     );

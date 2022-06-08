@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
 import 'package:suria_saba_app/themes/palette.dart';
+import 'package:suria_saba_app/views/directory/dictory_page.dart';
 import 'package:suria_saba_app/views/scan/scan_page.dart';
 import 'package:suria_saba_app/views/voucher/voucher_page.dart';
 
-import 'dictory/dictory_page.dart';
 import 'home/home_page.dart';
 
 class BottomBArPage extends StatefulWidget {
@@ -34,11 +34,11 @@ class _BottomBArPageState extends State<BottomBArPage> {
 
 
     ),
-    PersistentBottomNavBarItem(icon: const Icon(SubaIcon.location),title: 'Dictory',
-   inactiveColorPrimary: Colors.grey,
-        activeColorPrimary: Palette.color
-
-    ),
+    PersistentBottomNavBarItem(
+        icon: const Icon(SubaIcon.location),
+        title: 'Directory',
+        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: Palette.color),
     PersistentBottomNavBarItem(icon: const Icon(SubaIcon.camera ),title: 'Scan',
       inactiveColorPrimary: Colors.grey,
         activeColorPrimary: Palette.color),

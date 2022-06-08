@@ -27,11 +27,13 @@ class _ScrollBarWidgetState extends State<ScrollBarWidget> {
         child: Stack(
           children: [
             Positioned.fill(
-              right: 5,
-              child: Align(
-                  alignment: Alignment.topRight,
-                  child: VerticalDivider(color: Colors.black,)),
-            ),
+              right: ScreenConfig.blockWidth * 0.75,
+            child: Align(
+                alignment: Alignment.topRight,
+                child: VerticalDivider(
+                  color: Colors.black,
+                )),
+          ),
             SizedBox(
               width: ScreenConfig.blockWidth * 90,
               child: FlexibleScrollbar(

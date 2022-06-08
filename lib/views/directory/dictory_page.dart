@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:suria_saba_app/themes/palette.dart';
-import 'package:suria_saba_app/widgets/custom_appBar.dart';
+import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 
 import '../../configer/screen_config.dart';
 import '../../data/category_data.dart';

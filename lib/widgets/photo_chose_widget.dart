@@ -77,9 +77,8 @@ class _ChoosePhotoState extends State<ChoosePhoto> {
                         },
 
                         child:  Icon(
-                          Icons.image,color: Palette.color,size: 35
-
-                        ),
+                          SubaIcon.images,
+                            color: Palette.color, size: 35),
                       ),
                     ),
                     const SizedBox(height: 7,),

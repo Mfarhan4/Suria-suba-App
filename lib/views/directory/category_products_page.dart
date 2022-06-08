@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:suria_saba_app/views/dictory/product_view_page.dart';
-import 'package:suria_saba_app/widgets/custom_appBar.dart';
+import 'package:suria_saba_app/views/directory/product_view_page.dart';
+import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 import 'package:suria_saba_app/widgets/products_widget/dictory_products_widget.dart';
 
 import '../../configer/screen_config.dart';
 import '../../themes/palette.dart';
-import '../../widgets/company_name_widget.dart';
 
 class CategoryProducts extends StatelessWidget {
   const CategoryProducts({Key? key}) : super(key: key);
@@ -39,7 +38,7 @@ class CategoryProducts extends StatelessWidget {
                   children: [
 
 
-                    Container(
+                    SizedBox(
                       height: ScreenConfig.blockHeight * 11,
                       child: Column(
                         children: [
@@ -64,18 +63,23 @@ class CategoryProducts extends StatelessWidget {
                           itemCount: 20,
                           gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            childAspectRatio: 2.4/4,
-                          ),
+                              crossAxisCount: 3,
+                                    mainAxisSpacing: 5,
+                                    crossAxisSpacing: 5,
+                                    childAspectRatio: 3 / 4),
                           itemBuilder: (context, index) {
-                            return
-                              InkWell(
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (_) => const ProductViewPage()));
-                                  },
-
-                                  child: const DictoryProductsWidget());
-                          })
+                            return FittedBox(
+                                child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (_) =>
+                                                  const ProductViewPage()));
+                                    },
+                                    child: const DirectoryProductsWidget()),
+                              );
+                            })
                     )
                   ],
                 ),
