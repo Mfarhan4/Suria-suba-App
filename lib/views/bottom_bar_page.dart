@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:suria_saba_app/suba_icon_icons.dart';
+import 'package:suria_saba_app/themes/palette.dart';
+import 'package:suria_saba_app/views/scan/scan_page.dart';
+import 'package:suria_saba_app/views/voucher/voucher_page.dart';
 
-import 'directory_page.dart';
-import 'home_page.dart';
+import 'dictory/dictory_page.dart';
+import 'home/home_page.dart';
 
 class BottomBArPage extends StatefulWidget {
   const BottomBArPage({Key? key}) : super(key: key);
@@ -17,33 +21,33 @@ class _BottomBArPageState extends State<BottomBArPage> {
   final List<Widget> _screen=[
     const HomePage(),
     const DirectoryPage(),
-    const Center(child: Text("Scan")),
-    const Center(child: Text("Vouchers")),
+    const ScanPage(),
+    const VoucherPage(),
     const Center(child: Text("Account"))
 
   ];
   final List<PersistentBottomNavBarItem>  _item =[
 
-    PersistentBottomNavBarItem(icon: const Icon(Icons.add_to_home_screen),title: 'Home',
+    PersistentBottomNavBarItem(icon: const Icon(SubaIcon.home),title: 'Home',
       inactiveColorPrimary: Colors.grey,
-      activeColorPrimary: Colors.pinkAccent
+      activeColorPrimary: Palette.color
 
 
     ),
-    PersistentBottomNavBarItem(icon: const Icon(Icons.pin_drop_sharp),title: 'Dictory',
+    PersistentBottomNavBarItem(icon: const Icon(SubaIcon.location),title: 'Dictory',
    inactiveColorPrimary: Colors.grey,
-        activeColorPrimary: Colors.pinkAccent
+        activeColorPrimary: Palette.color
 
     ),
-    PersistentBottomNavBarItem(icon: const Icon(Icons.document_scanner ),title: 'Scan',
+    PersistentBottomNavBarItem(icon: const Icon(SubaIcon.camera ),title: 'Scan',
       inactiveColorPrimary: Colors.grey,
-        activeColorPrimary: Colors.pinkAccent),
-    PersistentBottomNavBarItem(icon: const Icon(Icons.wallet_giftcard),title: 'Voucher',
+        activeColorPrimary: Palette.color),
+    PersistentBottomNavBarItem(icon: const Icon(SubaIcon.ticket_v,),title: '   Voucher',
       inactiveColorPrimary: Colors.grey,
-        activeColorPrimary: Colors.pinkAccent),
-    PersistentBottomNavBarItem(icon: const Icon(Icons.person),title: 'Account',
+        activeColorPrimary: Palette.color),
+    PersistentBottomNavBarItem(icon: const Icon(SubaIcon.person),title: 'Account',
       inactiveColorPrimary: Colors.grey,
-        activeColorPrimary: Colors.pinkAccent),
+        activeColorPrimary: Palette.color),
 
   ];
   @override

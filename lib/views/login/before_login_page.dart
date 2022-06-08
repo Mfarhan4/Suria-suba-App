@@ -25,8 +25,8 @@ class BeforeLoginPage extends StatelessWidget {
             Flexible(
               child: SizedBox(
                 height: MediaQuery.of(context).size.height,
-                child: Image.network(
-                  "https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg",
+                child: Image.asset(
+                  "assets/images/register_background.png",
                   fit: BoxFit.cover,
                 ),
               ),

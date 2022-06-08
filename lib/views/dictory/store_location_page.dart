@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:suria_saba_app/themes/palette.dart';
 import 'package:suria_saba_app/widgets/custom_appBar.dart';
 
-import '../configer/screen_config.dart';
-import '../suba_icon_icons.dart';
-import '../widgets/company_name_widget.dart';
+import '../../configer/screen_config.dart';
+import '../../suba_icon_icons.dart';
+import '../../widgets/company_name_widget.dart';
 
 class StoreLocationPage extends StatelessWidget {
   const StoreLocationPage({Key? key}) : super(key: key);
@@ -12,14 +12,14 @@ class StoreLocationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar:  CustomAppBar(enableBackButton: true,),
       body: SizedBox(
         height: ScreenConfig.screenHeight,
         width: ScreenConfig.screenWidth,
         child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-             image: AssetImage('assets/images/categories_background.png'),
+          decoration: const BoxDecoration(
+            image: const DecorationImage(
+             image: const AssetImage('assets/images/categories_background.png'),
               fit: BoxFit.cover
             ),
           ),
@@ -32,23 +32,23 @@ class StoreLocationPage extends StatelessWidget {
                         child: Card(
                           elevation: 9,
                           shadowColor: Palette.color,
-                          shape: OutlineInputBorder(borderRadius: BorderRadius.circular(12),borderSide: BorderSide(color: Colors.white)) ,
+                          shape: OutlineInputBorder(borderRadius: BorderRadius.circular(12),borderSide: const BorderSide(color: Colors.white)) ,
                           color: Colors.white,child: Column(children: [
                            CompanyName(nameSize: 35, titleSize: 10, nameColor: Palette.color, titleColor: Palette.color,),
 
-                           SizedBox(height: 10,),
+                           const SizedBox(height: 10,),
                            SizedBox(
                                height: ScreenConfig.blockHeight * 35,
                                width: ScreenConfig.screenWidth,
                                child: Padding(
                                  padding: const EdgeInsets.all(8.0),
-                                 child: Image.network("https://i.stack.imgur.com/XPIko.png",fit: BoxFit.cover,),
+                                 child: Image.asset("assets/images/map.png",fit: BoxFit.cover,),
                                )),
 
                         ],),),
                       ),
 
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                         Padding(
                           padding: const EdgeInsets.only(left: 18.0,right: 18),
                           child: Row(children: [
@@ -73,7 +73,7 @@ class StoreLocationPage extends StatelessWidget {
 
                               ),
                             ],),
-                            SizedBox(width: 20,),
+                            const SizedBox(width: 20,),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -97,7 +97,7 @@ class StoreLocationPage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
 
                               FittedBox(
                                 child: Row(

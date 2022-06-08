@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-import '../themes/palette.dart';
-import 'login/before_login_page.dart';
+import '../../themes/palette.dart';
+import 'before_login_page.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);

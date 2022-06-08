@@ -22,8 +22,8 @@ class LoginPage extends StatelessWidget {
               child: ColorFiltered(
                 colorFilter: ColorFilter.mode(
                     Colors.black.withOpacity(0.8), BlendMode.darken),
-                child: Image.network(
-                  "https://www.mckinsey.com.br/~/media/mckinsey/industries/retail/our%20insights/boosting%20mall%20revenues%20through%20advanced%20analytics/boosting%20mall%20revenues_1536x1536_200.jpg",
+                child: Image.asset(
+                  "assets/images/register_background.png",
                   fit: BoxFit.cover,
                 ),
               ),

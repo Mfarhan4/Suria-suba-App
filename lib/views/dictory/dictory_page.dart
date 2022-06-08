@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:suria_saba_app/themes/palette.dart';
 import 'package:suria_saba_app/widgets/custom_appBar.dart';
 
-import '../configer/screen_config.dart';
-import '../data/category_data.dart';
-import '../widgets/company_name_widget.dart';
+import '../../configer/screen_config.dart';
+import '../../data/category_data.dart';
+import '../../widgets/company_name_widget.dart';
 import 'category_products_page.dart';
 
 class DirectoryPage extends StatelessWidget {
@@ -13,7 +13,7 @@ class DirectoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar:  CustomAppBar(enableBackButton: false,),
       body: Column(
         children: [
           SizedBox(
@@ -43,7 +43,8 @@ class DirectoryPage extends StatelessWidget {
                       // elevation: 8,
 
                       child: SizedBox( height: 35,
-                        child: TextField(
+                        child:
+                        TextField(
 
                           textAlign: TextAlign.center,
 
@@ -101,7 +102,8 @@ class DirectoryPage extends StatelessWidget {
                   child: SizedBox(
 
                     height: ScreenConfig.blockHeight * 55,
-                    child: GridView.builder(
+                    child:
+                    GridView.builder(
                         itemCount: CategoryClass.dataList.length,
                         gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(

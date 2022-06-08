@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:suria_saba_app/views/product_view_page.dart';
+import 'package:suria_saba_app/views/dictory/product_view_page.dart';
 import 'package:suria_saba_app/widgets/custom_appBar.dart';
-import 'package:suria_saba_app/widgets/product_widget.dart';
+import 'package:suria_saba_app/widgets/products_widget/dictory_products_widget.dart';
 
-import '../configer/screen_config.dart';
-import '../themes/palette.dart';
-import '../widgets/company_name_widget.dart';
+import '../../configer/screen_config.dart';
+import '../../themes/palette.dart';
+import '../../widgets/company_name_widget.dart';
 
 class CategoryProducts extends StatelessWidget {
   const CategoryProducts({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class CategoryProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar:  CustomAppBar(enableBackButton: true,),
       body: Container(
         height: ScreenConfig.blockHeight * 80,
         color: Colors.white,
@@ -74,7 +74,7 @@ class CategoryProducts extends StatelessWidget {
                                     Navigator.push(context, MaterialPageRoute(builder: (_) => const ProductViewPage()));
                                   },
 
-                                  child: const Products());
+                                  child: const DictoryProductsWidget());
                           })
                     )
                   ],

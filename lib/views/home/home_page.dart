@@ -5,7 +5,7 @@ import 'package:suria_saba_app/configer/screen_config.dart';
 import 'package:suria_saba_app/widgets/company_name_widget.dart';
 import 'package:suria_saba_app/widgets/custom_appBar.dart';
 
-import '../themes/palette.dart';
+import '../../themes/palette.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
     ScreenConfig().init(context);
 
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar:  CustomAppBar(enableBackButton: false,),
       body: Container(
         color: Colors.white,
         child: ListView(

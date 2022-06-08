@@ -20,10 +20,11 @@ class CompanyName extends StatelessWidget {
         children:  [
           Text(
             "Suria",
-            style: TextStyle(
+            style: GoogleFonts.openSans(
                 color: nameColor,
                 fontSize: nameSize,
-                fontWeight: FontWeight.bold,),
+                fontWeight: FontWeight.w900,
+            ),
           ),
         ],
       ),
@@ -34,10 +35,10 @@ class CompanyName extends StatelessWidget {
         children:  [
           Text(
             " Sabah",
-            style: TextStyle(
+            style: GoogleFonts.openSans(
                 color: nameColor,
                 fontSize: nameSize,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w900,
                 letterSpacing: 1.0,height: 0.75),
           ),
         ],

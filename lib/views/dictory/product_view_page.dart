@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
-import 'package:suria_saba_app/views/store_location_page.dart';
+import 'package:suria_saba_app/views/dictory/store_location_page.dart';
 import 'package:suria_saba_app/widgets/custom_appBar.dart';
 import 'package:suria_saba_app/widgets/custom_button_widget.dart';
 
@@ -21,7 +21,7 @@ class _ProductViewPageState extends State<ProductViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar:  CustomAppBar(enableBackButton: true,),
       body: SingleChildScrollView(
         child: SizedBox(
           height: ScreenConfig.screenHeight,

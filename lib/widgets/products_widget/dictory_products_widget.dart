@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../configer/screen_config.dart';
+import '../../configer/screen_config.dart';
 
-class Products extends StatelessWidget {
-  const Products({Key? key}) : super(key: key);
+class DictoryProductsWidget extends StatelessWidget {
+  const DictoryProductsWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

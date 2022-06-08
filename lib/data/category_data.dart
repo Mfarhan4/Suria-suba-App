@@ -17,7 +17,7 @@ class CategoryClass {
 {"name":"SPORTS & OUTDOORS","icon":SubaIcon.sports,"image":"assets/images/category/sports.png",},
 {"name":"IT & TELECOMMUNICATION","icon":SubaIcon.devices,"image":"assets/images/category/it.png",},
 {"name":"FOOD & BEVERAGE","icon":SubaIcon.food,"image":"assets/images/category/food.png",},
-{"name":"GIFT & SOUVENIR","icon":SubaIcon.gift,"image":"assets/images/category/gifts.png",},
+{"name":"GIFT & SOUVENIR","icon":SubaIcon.gifts,"image":"assets/images/category/gifts.png",},
 {"name":"GROCERY","icon":SubaIcon.groceries,"image":"assets/images/category/grocery.png",},
 {"name":"ENTERTAINMENT","icon":SubaIcon.entertainment,"image":"assets/images/category/entertainment.png",},
 {"name":"DEPARTMENT STORE","icon":SubaIcon.cart,"image":"assets/images/category/cart.png",},

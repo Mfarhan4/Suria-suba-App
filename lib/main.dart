@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:suria_saba_app/providers/image_provider.dart';
 import 'package:suria_saba_app/views/bottom_bar_page.dart';
-import 'package:suria_saba_app/views/login/before_login_page.dart';
-import 'package:suria_saba_app/views/login/login_page.dart';
-import 'package:suria_saba_app/views/onbording_page.dart';
-import 'package:suria_saba_app/views/test_page.dart';
-import 'package:suria_saba_app/widgets/custom_appBar.dart';
 
 import 'configer/configer.dart';
 
@@ -14,7 +11,10 @@ void main() {
     //systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.transparent, // status bar color
   ));
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => ImagesProvider()),
+  ],
+  child: const MyApp()));
 
 }
 
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home:  BeforeLoginPage(),
+      home:  const BottomBArPage(),
     );
   }
 }
