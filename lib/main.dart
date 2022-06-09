@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:suria_saba_app/providers/image_provider.dart';
+import 'package:suria_saba_app/providers/scan_provider.dart';
 import 'package:suria_saba_app/views/bottom_bar_page.dart';
 
 import 'configer/configer.dart';
@@ -14,6 +15,7 @@ void main() async {
 
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => ImagesProvider()),
+    ChangeNotifierProvider(create: (context) => ScanProvider()),
   ], child: const MyApp()));
 }
 

@@ -73,9 +73,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar:  CustomAppBar(enableBackButton: false,),
       body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
+        decoration: const BoxDecoration(
+            image: const DecorationImage(
+                image: const AssetImage(
                   'assets/images/background.png',
                 ),
                 fit: BoxFit.fitWidth)),
@@ -204,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                           "See All >>   ",
                           style: TextStyle(
                               fontSize: 12,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w400),
                         ),
                       )
                     ],
@@ -222,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                       return Padding(
                         padding: const EdgeInsets.all(3),
                         child: Container(
-                          margin: EdgeInsets.only(bottom: 5.5),
+                          margin: const EdgeInsets.only(bottom: 5.5),
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -288,7 +288,7 @@ class _HomePageState extends State<HomePage> {
                       return Padding(
                         padding: const EdgeInsets.all(3),
                         child: Container(
-                          margin: EdgeInsets.only(bottom: 5.5),
+                          margin: const EdgeInsets.only(bottom: 5.5),
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -354,7 +354,7 @@ class _HomePageState extends State<HomePage> {
                       return Padding(
                         padding: const EdgeInsets.all(3),
                         child: Container(
-                          margin: EdgeInsets.only(bottom: 5.5),
+                          margin: const EdgeInsets.only(bottom: 5.5),
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
@@ -420,7 +420,7 @@ class _HomePageState extends State<HomePage> {
                       return Padding(
                         padding: const EdgeInsets.all(3),
                         child: Container(
-                          margin: EdgeInsets.only(bottom: 5.5),
+                          margin: const EdgeInsets.only(bottom: 5.5),
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(

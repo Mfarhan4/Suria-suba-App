@@ -7,6 +7,7 @@ import 'package:suria_saba_app/views/directory/dictory_page.dart';
 import 'package:suria_saba_app/views/scan/scan_page.dart';
 import 'package:suria_saba_app/views/voucher/voucher_page.dart';
 
+import 'account/account_page.dart';
 import 'home/home_page.dart';
 
 class BottomBArPage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _BottomBArPageState extends State<BottomBArPage> {
     const DirectoryPage(),
     const ScanPage(),
     const VoucherPage(),
-    const Center(child: Text("Account"))
+    const AccountPage(),
 
   ];
   final List<PersistentBottomNavBarItem>  _item =[

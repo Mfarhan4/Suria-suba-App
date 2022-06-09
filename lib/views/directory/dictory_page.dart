@@ -33,7 +33,8 @@ class DirectoryPage extends StatelessWidget {
                 Positioned(
                     top: 22,
                     left: 25,right: 25,
-                    child: Container(
+                    child:
+                    Container(
 
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),
                       boxShadow: [BoxShadow(color: Colors.pink[300]!.withOpacity(0.4),offset: Offset(4,7),blurRadius: 10)],
@@ -65,7 +66,8 @@ class DirectoryPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )),
+                    )
+                ),
 
               ],
             ),

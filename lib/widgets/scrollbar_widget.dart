@@ -3,7 +3,12 @@ import 'dart:math';
 import 'package:flexible_scrollbar/flexible_scrollbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
+
+import '../providers/scan_provider.dart';
+import '../views/scan/scan_page.dart';
+
 
 class ScrollBarWidget extends StatefulWidget {
   const ScrollBarWidget({ Key? key,}) : super(key: key);
@@ -15,12 +20,23 @@ class ScrollBarWidget extends StatefulWidget {
 }
 
 class _ScrollBarWidgetState extends State<ScrollBarWidget> {
+
     final  _scrollController=ScrollController();
     final double thumbWidth = 10;
     final double thumbDragWidth = 10;
     final animationDuration = const Duration(milliseconds: 300);
+    String _value="";
+    @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final scanProvider=Provider.of<ScanProvider>(context,listen: false);
+    scanProvider.searchItem();
+  }
   @override
+
   Widget build(BuildContext context) {
+    final scanProvider =Provider.of<ScanProvider>(context,listen:false);
     return
       Container(
         color: Colors.white,
@@ -28,7 +44,7 @@ class _ScrollBarWidgetState extends State<ScrollBarWidget> {
           children: [
             Positioned.fill(
               right: ScreenConfig.blockWidth * 0.75,
-            child: Align(
+            child: const Align(
                 alignment: Alignment.topRight,
                 child: VerticalDivider(
                   color: Colors.black,
@@ -54,10 +70,22 @@ class _ScrollBarWidgetState extends State<ScrollBarWidget> {
                 child: ListView.builder(
                   shrinkWrap: true,
                   controller: _scrollController,
-                  itemCount: 30,
+                  itemCount: scanProvider.searchData.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text('Item ${index + 1}'),
+                    return InkWell(
+                      onTap: (){
+                        _value=scanProvider.searchData[index];
+                        scanProvider.selectedItem(_value);
+
+
+
+
+                        // Navigator.pop(context);
+
+                      },
+                      child: ListTile(
+                        title: Text('${scanProvider.searchData[index]}'),
+                      ),
                     );
                   },
                 ),
