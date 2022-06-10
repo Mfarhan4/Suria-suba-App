@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:suria_saba_app/views/directory/product_view_page.dart';
+import 'package:suria_saba_app/views/directory/directory_product_view_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 import 'package:suria_saba_app/widgets/products_widget/dictory_products_widget.dart';
 

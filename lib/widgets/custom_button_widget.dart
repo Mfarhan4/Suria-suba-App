@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton(
-      {Key? key, required this.onTaps, required this.text, this.borderRadius})
+      {Key? key, required this.onTaps, required this.text, this.borderRadius,this.icon})
       : super(key: key);
   final Function onTaps;
   final String text;
   final double? borderRadius;
+  final IconData?  icon;
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +55,21 @@ class PrimaryButton extends StatelessWidget {
                   child: SizedBox(
                       height: 55,
                       width: 80,
-                      child: Center(
-                          child: Text(
-                        text,
-                        style: TextStyle(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(child : icon!= null ?Icon(icon,color: Colors.white,): const SizedBox()),
+                        SizedBox(width: 5,),
+                          Text(
+                            text,
+                            style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
-                      ))),
+                          ),
+                        ],
+                      )),
                 ),
               ),
             ),

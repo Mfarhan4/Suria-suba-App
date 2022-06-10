@@ -1,14 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:suria_saba_app/themes/palette.dart';
+import 'package:suria_saba_app/suba_icon_icons.dart';
 
-import '../../configer/screen_config.dart';
-import '../../suba_icon_icons.dart';
-import '../../widgets/custom_app_bar.dart';
-import '../../widgets/custom_button_widget.dart';
+import '../../../configer/screen_config.dart';
+import '../../../themes/palette.dart';
+import '../../../widgets/custom_app_bar.dart';
+import '../../../widgets/custom_button_widget.dart';
 
-class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({Key? key}) : super(key: key);
+
+
+class ChangePasswordPage extends StatelessWidget {
+  const ChangePasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,26 +35,64 @@ class EditProfilePage extends StatelessWidget {
                 height: 40,
               ),
 
-               Text(
-                "EDIT PROFILE",
+              Text(
+                "CHANGE PASSWORD",
                 style: TextStyle(fontSize: 18, color: Palette.color,fontWeight: FontWeight.w700),
               ),
-              SizedBox(height: 12,),
-              const CircleAvatar(
-                  radius: 40,
-                  child: FittedBox(
-                      child: Icon(
-                        SubaIcon.person,
-                        size: 70,
-                        color: Colors.blueAccent,
-                      )),
-                  backgroundColor: Colors.white),
+
               const SizedBox(
                 height: 15,
               ),
-              Text(
-                "User Name",
-                style: TextStyle(fontSize: 16, color: Colors.black),
+
+              SizedBox(
+                  height: 43,
+                  child:Container(
+
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),
+                    //  boxShadow: [BoxShadow(color: Colors.pink[300]!.withOpacity(0.4),offset: Offset(4,7),blurRadius: 10)],
+                    ),
+                    //borderRadius: BorderRadius.circular(12),
+                    // shadowColor: Colors.pink.withOpacity(0.8),
+                    // elevation: 8,
+
+                    child: SizedBox(
+                      child:
+                      TextField(
+
+                        textAlign: TextAlign.center,
+
+                        decoration: InputDecoration(
+
+                          contentPadding:
+                          const EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
+                          filled: true,
+
+                          hintText: "Current Password",
+                          suffixIcon: Icon(Icons.lock),
+
+                          fillColor: Colors.white,
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),borderSide:  BorderSide(color: Palette.color)),
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),borderSide:  BorderSide(color: Palette.color)),
+
+                        ),
+                      ),
+                    ),
+                  )),
+
+              SizedBox(height: 10,),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0,right: 9),
+                child: Column(
+                  children: [
+                    Text(
+                      "Please ensure your password is at least 8 characters"
+                        "1 uppercase, 1 lowercase and 1 number",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                  ],
+                ),
               ),
 
               const SizedBox(height: 20,),
@@ -80,7 +119,8 @@ class EditProfilePage extends StatelessWidget {
                           const EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
                           filled: true,
 
-                          hintText: "user@mail.com",
+                          hintText: "New Pasword",
+                          suffixIcon:Icon(Icons.hide_source) ,
 
                           fillColor: Colors.white,
                           enabledBorder: OutlineInputBorder(
@@ -98,7 +138,7 @@ class EditProfilePage extends StatelessWidget {
                   child:Container(
 
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(4),
-                     // boxShadow: [BoxShadow(color: Colors.pink[300]!.withOpacity(0.4),offset: Offset(4,7),blurRadius: 10)],
+                      // boxShadow: [BoxShadow(color: Colors.pink[300]!.withOpacity(0.4),offset: Offset(4,7),blurRadius: 10)],
                     ),
                     //borderRadius: BorderRadius.circular(12),
                     // shadowColor: Colors.pink.withOpacity(0.8),
@@ -116,7 +156,8 @@ class EditProfilePage extends StatelessWidget {
                           const EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
                           filled: true,
 
-                          hintText: "+60 12 345 6789",
+                          hintText: "Confirm New Password",
+                          suffixIcon: Icon(Icons.hide_source),
 
                           fillColor: Colors.white,
                           enabledBorder: OutlineInputBorder(

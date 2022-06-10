@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
 import 'package:suria_saba_app/themes/palette.dart';
-import 'package:suria_saba_app/views/account/profile_page.dart';
+import 'package:suria_saba_app/views/account/profile/profile_page.dart';
+import 'package:suria_saba_app/views/account/redemption/redemption_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
+
+import 'my_vouchers/my_vouchers_page.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -136,12 +139,17 @@ class _AccountPageState extends State<AccountPage> {
                         Column(
                           children: [
                             FittedBox(
-                              child: Container(
-                                decoration: BoxDecoration(border: Border.all(width: 1,color:Palette.color),borderRadius: BorderRadius.circular(14),gradient:LinearGradient(colors: [Colors.brown[100]!,Colors.white54,]),),
-                                height: ScreenConfig.blockWidth * 14,
-                                width: ScreenConfig.blockWidth * 14,
-                                child:Center(child: FittedBox(child:  Icon(SubaIcon.gift,color: Palette.color,size: 30,)),),
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.push(context,MaterialPageRoute(builder: (_) => const RedemptionPage()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(border: Border.all(width: 1,color:Palette.color),borderRadius: BorderRadius.circular(14),gradient:LinearGradient(colors: [Colors.brown[100]!,Colors.white54,]),),
+                                  height: ScreenConfig.blockWidth * 14,
+                                  width: ScreenConfig.blockWidth * 14,
+                                  child:Center(child: FittedBox(child:  Icon(SubaIcon.gift,color: Palette.color,size: 30,)),),
 
+                                ),
                               ),
                             ),
                             const SizedBox(height: 10,),
@@ -151,15 +159,20 @@ class _AccountPageState extends State<AccountPage> {
                         Column(
                           children: [
                             FittedBox(
-                              child: Container(
-                                decoration: BoxDecoration(border: Border.all(width: 1,color:Palette.color),borderRadius: BorderRadius.circular(14),gradient:LinearGradient(colors: [Colors.brown[100]!,Colors.white54,]),),
-                                height: ScreenConfig.blockWidth * 14,
-                                width: ScreenConfig.blockWidth * 14,
-                                child:Center(child: FittedBox(child:  Padding(
-                                  padding: const EdgeInsets.only(right: 8.0),
-                                  child: Icon(SubaIcon.ticket,color: Palette.color,size: 20,),
-                                )),),
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (_) => const MyVouchersPage()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(border: Border.all(width: 1,color:Palette.color),borderRadius: BorderRadius.circular(14),gradient:LinearGradient(colors: [Colors.brown[100]!,Colors.white54,]),),
+                                  height: ScreenConfig.blockWidth * 14,
+                                  width: ScreenConfig.blockWidth * 14,
+                                  child:Center(child: FittedBox(child:  Padding(
+                                    padding: const EdgeInsets.only(right: 8.0),
+                                    child: Icon(SubaIcon.ticket,color: Palette.color,size: 20,),
+                                  )),),
 
+                                ),
                               ),
                             ),
                             const SizedBox(height: 10,),

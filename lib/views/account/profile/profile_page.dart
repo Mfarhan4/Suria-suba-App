@@ -4,11 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
-import 'package:suria_saba_app/views/account/profile_edit_page.dart';
+import 'package:suria_saba_app/views/account/profile/profile_edit_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 import 'package:suria_saba_app/widgets/custom_button_widget.dart';
 
-import '../directory/change_password_page.dart';
+import 'change_password_page.dart';
+
+
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);

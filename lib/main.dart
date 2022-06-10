@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:suria_saba_app/providers/image_provider.dart';
 import 'package:suria_saba_app/providers/scan_provider.dart';
 import 'package:suria_saba_app/views/bottom_bar_page.dart';
+import 'package:suria_saba_app/views/login/onbording_page.dart';
 
 import 'configer/configer.dart';
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home:  const BottomBArPage(),
+      home:  const OnBoardingPage(),
     );
   }
 }

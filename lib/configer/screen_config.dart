@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ScreenConfig {
-
   static late MediaQueryData? _mediaQueryData;
   static late double screenWidth;
   static late double screenHeight;
@@ -9,6 +8,8 @@ class ScreenConfig {
   static late double blockHeight;
   static late double topPadding;
   static late double staticScreenWidth;
+  static late double bodyHeight;
+  static late double bodyWidth;
 
   static late double _safeAreaHorizontal;
   static late double _safeAreaVertical;
@@ -37,6 +38,9 @@ class ScreenConfig {
     safeHeight =
         (screenHeight - _safeAreaVertical - AppBar().preferredSize.height) /
             100;
+    bodyWidth = (screenWidth - _safeAreaHorizontal);
+    bodyHeight =
+        (screenHeight - _safeAreaVertical - AppBar().preferredSize.height);
     if (_mediaQueryData != null) {
       topPadding = _mediaQueryData!.padding.top;
     } else {
