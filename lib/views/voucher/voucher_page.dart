@@ -119,7 +119,7 @@ class VoucherPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: ScreenConfig.blockHeight * 59,
+                      height: ScreenConfig.blockHeight * 58,
                       child: GridView.builder(
                           itemCount: 12,
                           gridDelegate:

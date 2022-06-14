@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
 
-import '../providers/scan_provider.dart';
+
+import '../providers/scroller_provider.dart';
 import '../views/scan/scan_page.dart';
 
 

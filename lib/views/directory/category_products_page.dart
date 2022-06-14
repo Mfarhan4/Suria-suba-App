@@ -57,7 +57,7 @@ class CategoryProducts extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: ScreenConfig.blockHeight*65,
+                      height: ScreenConfig.blockHeight*64,
                       width: ScreenConfig.blockHeight * 65,
                       child: GridView.builder(
                           itemCount: 20,

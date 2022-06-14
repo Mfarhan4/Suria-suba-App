@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:suria_saba_app/providers/scan_provider.dart';
+import 'package:suria_saba_app/providers/scroller_provider.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
 import 'package:suria_saba_app/themes/palette.dart';
+import 'package:suria_saba_app/views/scan/scan_history_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 
 import '../../configer/screen_config.dart';
@@ -61,9 +62,14 @@ class _ScanPageState extends State<ScanPage> {
                               color: Palette.color,
                               fontWeight: FontWeight.w900),
                         ),
-                        Icon(
-                          SubaIcon.clock_timing,
-                          color: Palette.color,
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => const ScanHistoryPage()));
+                          },
+                          child:  Icon(
+                            SubaIcon.clock_timing,
+                            color: Palette.color,
+                          ),
                         )
                       ],
                     ),
@@ -142,7 +148,7 @@ class _ScanPageState extends State<ScanPage> {
                             ),
                             child: TextField(
                               onTap: () {
-                                scanProvider.toggleSearch();
+
                               },
                               textAlign: TextAlign.center,
                               decoration: const InputDecoration(
@@ -289,7 +295,7 @@ class _ScanPageState extends State<ScanPage> {
                         //  height: 400,
                         width: ScreenConfig.screenWidth,
                         child: const ChoosePhoto()),
-                    SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

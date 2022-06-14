@@ -60,7 +60,7 @@ class RedemptionPage extends StatelessWidget {
                 ),
               ),
                SizedBox(
-                 height: ScreenConfig.blockHeight * 66,
+                 height: ScreenConfig.blockHeight * 65,
                 child:  GridView.builder(
                     itemCount: 12,
                     gridDelegate:

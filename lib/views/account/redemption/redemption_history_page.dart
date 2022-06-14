@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
+import 'package:suria_saba_app/views/account/redemption/redemption_history_view_page.dart';
 import 'package:suria_saba_app/views/account/redemption/redemption_product_view_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 
@@ -50,7 +51,7 @@ class RedemptionHistoryPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: ScreenConfig.blockHeight * 66,
+                height: ScreenConfig.blockHeight * 65,
                 child:  GridView.builder(
                     itemCount: 12,
                     gridDelegate:
@@ -61,9 +62,14 @@ class RedemptionHistoryPage extends StatelessWidget {
                       childAspectRatio: 3.0 / 4,
                     ),
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FittedBox(child:  VoucherProductsWidget(text1: 'Water Bottle', image: 'https://media.istockphoto.com/photos/woman-holding-sale-shopping-bags-consumerism-shopping-lifestyle-picture-id1254508881?k=20&m=1254508881&s=612x612&w=0&h=d6KO9oMB3cMLGSFEu5GoGbYX0RpkHSEoUCARo7UagTI=', text2: '100 Points',)),
+                      return InkWell(
+                        onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => const RedemptionHistoryViewPage()));
+                          },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: FittedBox(child:  VoucherProductsWidget(text1: 'Water Bottle', image: 'https://media.istockphoto.com/photos/woman-holding-sale-shopping-bags-consumerism-shopping-lifestyle-picture-id1254508881?k=20&m=1254508881&s=612x612&w=0&h=d6KO9oMB3cMLGSFEu5GoGbYX0RpkHSEoUCARo7UagTI=', text2: '100 Points',)),
+                        ),
                       );
                     }),
 

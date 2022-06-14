@@ -36,53 +36,53 @@ class ProfilePage extends StatelessWidget {
             width: ScreenConfig.screenWidth,
             height: ScreenConfig.blockHeight * 81,
             color: Colors.black.withOpacity(0.5),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                const CircleAvatar(
-                    radius: 60,
-                    child: FittedBox(
-                        child: Icon(
-                      SubaIcon.person,
-                      size: 100,
-                      color: Colors.blueAccent,
-                    )),
-                    backgroundColor: Colors.white),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Text(
-                  "User Name",
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Text(
-                  "01 / 02 / 1990",
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Text(
-                  "user@gmail.com",
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const Text(
-                  "+60123456789",
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Expanded(
-                  child: Container(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const CircleAvatar(
+                      radius: 60,
+                      child: FittedBox(
+                          child: Icon(
+                        SubaIcon.person,
+                        size: 100,
+                        color: Colors.blueAccent,
+                      )),
+                      backgroundColor: Colors.white),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "User Name",
+                    style: TextStyle(fontSize: 22, color: Colors.white),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "01 / 02 / 1990",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "user@gmail.com",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "+60123456789",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Container(
                     decoration: const BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(22),topLeft: Radius.circular(22),),color: Colors.white),
 
                     width: ScreenConfig.screenWidth,
@@ -107,9 +107,9 @@ class ProfilePage extends StatelessWidget {
                             child: PrimaryButton(onTaps: (){}, text: "Log Out",borderRadius: 10,))
                       ],),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

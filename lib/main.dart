@@ -1,14 +1,19 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:suria_saba_app/configer/screen_config.dart';
 import 'package:suria_saba_app/providers/image_provider.dart';
-import 'package:suria_saba_app/providers/scan_provider.dart';
+import 'package:suria_saba_app/providers/scroller_provider.dart';
+import 'package:suria_saba_app/providers/scanner_provider.dart';
 import 'package:suria_saba_app/views/bottom_bar_page.dart';
 import 'package:suria_saba_app/views/login/onbording_page.dart';
 
 import 'configer/configer.dart';
 
 void main() async {
+
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     //systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.transparent, // status bar color
@@ -17,6 +22,7 @@ void main() async {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => ImagesProvider()),
     ChangeNotifierProvider(create: (context) => ScanProvider()),
+    ChangeNotifierProvider(create: (context) => ScannerProvider()),
   ], child: const MyApp()));
 }
 
@@ -46,7 +52,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.pink,
       ),
-      home:  const OnBoardingPage(),
+      home:  const BottomBArPage(),
     );
   }
 }

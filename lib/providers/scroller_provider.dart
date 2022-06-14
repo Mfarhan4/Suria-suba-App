@@ -21,7 +21,7 @@ class ScanProvider extends ChangeNotifier {
 
   }
 
-  toggleSearch() {
+  toggleSerch() {
 
    _isSearchVisible ? _isSearchVisible = false : _isSearchVisible = true;
     debugPrint(_isSearchVisible.toString());

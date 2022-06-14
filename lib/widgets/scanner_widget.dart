@@ -3,13 +3,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
 
+
+
 class ScannerWidget extends StatelessWidget {
-  const ScannerWidget({Key? key}) : super(key: key);
+  const ScannerWidget({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MobileScannerController _controller=MobileScannerController(
-        facing: CameraFacing.back, torchEnabled: false);
+
 
     return  Scaffold(
       appBar: AppBar(title: const Text('Scan QR Code To Redeem'),backgroundColor: Colors.white,),
@@ -27,18 +28,7 @@ class ScannerWidget extends StatelessWidget {
                   color: Colors.white,
                   height:ScreenConfig.blockWidth * 100,
                   width: ScreenConfig.blockWidth * 100,
-                  child: MobileScanner(
-                      allowDuplicates: false,
-                      controller:_controller ,
-                      onDetect: (barcode, args) {
-                        if (barcode.rawValue == null) {
-                          debugPrint('Failed to scan Barcode');
-                        } else {
-                          final String code = barcode.rawValue!;
-                          debugPrint('Barcode found! $code');
-                          Navigator.pop(context);
-                        }
-                      }),
+
                 ),
               ),
               // IconButton(

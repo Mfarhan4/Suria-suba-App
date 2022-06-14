@@ -9,6 +9,7 @@ import 'package:suria_saba_app/views/account/profile/profile_page.dart';
 import 'package:suria_saba_app/views/account/redemption/redemption_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 
+import 'account_history.dart';
 import 'my_vouchers/my_vouchers_page.dart';
 
 class AccountPage extends StatefulWidget {
@@ -107,7 +108,7 @@ class _AccountPageState extends State<AccountPage> {
                 ),
 
                 SizedBox(
-                  height: ScreenConfig.blockHeight * 61,
+                  height: ScreenConfig.blockHeight * 60,
                   width: ScreenConfig.blockWidth *80,
                   child: Column(
 
@@ -287,7 +288,8 @@ class _AccountPageState extends State<AccountPage> {
           Positioned(
               child: Align(heightFactor: 4,
 
-                child: Container(
+                child:
+                Container(
 
             decoration: BoxDecoration(
 
@@ -312,7 +314,12 @@ class _AccountPageState extends State<AccountPage> {
                     ),
                   ),
 
-                FittedBox(child:  Icon(SubaIcon.clock_timing,color: Palette.color,size: 30,))
+                FittedBox(child:  InkWell(
+
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => const AccountHistoryPage()));
+                    },
+                    child: Icon(SubaIcon.clock_timing,color: Palette.color,size: 30,)))
 
               ],),
             ),

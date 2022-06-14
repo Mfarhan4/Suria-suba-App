@@ -2,7 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
+import 'package:suria_saba_app/providers/scanner_provider.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 import 'package:suria_saba_app/widgets/custom_button_widget.dart';
 import 'package:suria_saba_app/widgets/scanner_widget.dart';
@@ -31,6 +33,7 @@ class _MyVouchersProductViewPageState extends State<MyVouchersProductViewPage> {
 
   @override
   Widget build(BuildContext context) {
+    final scanProvider=Provider.of<ScannerProvider>(context,listen:false);
     return Scaffold(
       appBar: CustomAppBar(
         enableBackButton: true,
@@ -110,7 +113,10 @@ class _MyVouchersProductViewPageState extends State<MyVouchersProductViewPage> {
               SizedBox(
                 width: ScreenConfig.bodyWidth * 90,
                 height: 20,
-                child: RichText(text:TextSpan(children: [
+                child: RichText(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  text:TextSpan(children: [
 
                   const TextSpan(
                       text: 'For more info: ',
@@ -121,54 +127,44 @@ class _MyVouchersProductViewPageState extends State<MyVouchersProductViewPage> {
                       recognizer: TapGestureRecognizer()
                         ..onTap = (){_launch();},
                       style: const TextStyle(
-                          fontSize: 14, color: Colors.blue,overflow: TextOverflow.ellipsis),),
+                          fontSize: 14, color: Colors.blue,overflow: TextOverflow.ellipsis, ),),
 
                 ]), ),
               ),
-                const Expanded(child: Divider()),
+              //  const Expanded(child: Divider()),
                 const SizedBox(
                   height: 10,
                 ),
 
-                FittedBox(
 
-                  child: SizedBox(
-                      height: 35,
-                      width: ScreenConfig.blockWidth * 50,
+                    SizedBox(
+
                       child: PrimaryButton(
                         onTaps: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const ScannerWidget()));
+                          scanProvider.scanCode();
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (_) => const Sca()));
                         },
                         text: 'Redeem Now',
                         borderRadius: 7,
                         icon: Icons.document_scanner,
-                      )),
-                ),
-                const SizedBox(height: 10,),
-                FittedBox(
+                      ),
+                    ),
+                    const SizedBox(height: 10,),
+                    PrimaryButton(
+                      onTaps: () {
 
-                  child: SizedBox(
-                      height: 35,
-                      width: ScreenConfig.blockWidth * 50,
-                      child: PrimaryButton(
-                        onTaps: () {
-
-
-
-
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (_) => const ScannerWidget()));
-                        },
-                        text: 'Reveal Code',
-                        borderRadius: 7,
-                       // icon: Icons.document_scanner,
-                      )),
-                ),
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (_) => const ScannerWidget()));
+                      },
+                      text: 'Reveal Code',
+                      borderRadius: 7,
+                     // icon: Icons.document_scanner,
+                    ),
               ],
             ),
           ),
