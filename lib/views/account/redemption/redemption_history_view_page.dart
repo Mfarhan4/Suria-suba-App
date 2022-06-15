@@ -2,7 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:suria_saba_app/configer/screen_config.dart';
+import 'package:suria_saba_app/providers/scanner_provider.dart';
+import 'package:suria_saba_app/providers/scroller_provider.dart';
 import 'package:suria_saba_app/suba_icon_icons.dart';
 import 'package:suria_saba_app/views/directory/store_location_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
@@ -18,8 +21,12 @@ class RedemptionHistoryViewPage extends StatefulWidget {
 
 class _RedemptionHistoryViewPageState extends State<RedemptionHistoryViewPage> {
 
+
+
+
   @override
   Widget build(BuildContext context) {
+    final scannerProvider=Provider.of<ScannerProvider>(context,listen:false);
     return Scaffold(
       appBar: CustomAppBar(
         enableBackButton: true,
@@ -83,8 +90,9 @@ class _RedemptionHistoryViewPageState extends State<RedemptionHistoryViewPage> {
                           ],
                         ),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_) =>ScannerWidget() ));
+                          onTap: ()async {
+                               scannerProvider.messageSitter(true);
+                          await  Navigator.push(context, MaterialPageRoute(builder: (_) =>ScannerWidget() ));
 
                           },
                           child: SizedBox(

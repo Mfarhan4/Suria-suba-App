@@ -10,6 +10,7 @@ import 'package:suria_saba_app/views/account/redemption/redemption_page.dart';
 import 'package:suria_saba_app/widgets/custom_app_bar.dart';
 
 import 'account_history.dart';
+import 'contact/contact_page.dart';
 import 'my_vouchers/my_vouchers_page.dart';
 
 class AccountPage extends StatefulWidget {
@@ -183,12 +184,17 @@ class _AccountPageState extends State<AccountPage> {
                         Column(
                           children: [
                             FittedBox(
-                              child: Container(
-                                decoration: BoxDecoration(border: Border.all(width: 1,color:Palette.color),borderRadius: BorderRadius.circular(14),gradient:LinearGradient(colors: [Colors.brown[100]!,Colors.white54,]),),
-                                height: ScreenConfig.blockWidth *14,
-                                width: ScreenConfig.blockWidth * 14,
-                                child:Center(child: FittedBox(child:  Icon(SubaIcon.microphone,color: Palette.color,size: 30,)),),
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.push(context,MaterialPageRoute(builder: (_) => const ContactPage()));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(border: Border.all(width: 1,color:Palette.color),borderRadius: BorderRadius.circular(14),gradient:LinearGradient(colors: [Colors.brown[100]!,Colors.white54,]),),
+                                  height: ScreenConfig.blockWidth *14,
+                                  width: ScreenConfig.blockWidth * 14,
+                                  child:Center(child: FittedBox(child:  Icon(SubaIcon.microphone,color: Palette.color,size: 30,)),),
 
+                                ),
                               ),
                             ),
                             const SizedBox(height: 10,),

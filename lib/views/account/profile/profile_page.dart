@@ -34,78 +34,89 @@ class ProfilePage extends StatelessWidget {
           filter: new ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
           child: Container(
             width: ScreenConfig.screenWidth,
-            height: ScreenConfig.blockHeight * 81,
+            height: ScreenConfig.safeHeight * 100,
             color: Colors.black.withOpacity(0.5),
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 40,
+                  SizedBox(
+                    height: ScreenConfig.safeHeight * 50,
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        const CircleAvatar(
+                            radius: 60,
+                            child: FittedBox(
+                                child: Icon(
+                              SubaIcon.person,
+                              size: 100,
+                              color: Colors.blueAccent,
+                            )),
+                            backgroundColor: Colors.white),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          "User Name",
+                          style: TextStyle(fontSize: 22, color: Colors.white),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          "01 / 02 / 1990",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          "user@gmail.com",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          "+60123456789",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                      ],
+                    ),
                   ),
-                  const CircleAvatar(
-                      radius: 60,
-                      child: FittedBox(
-                          child: Icon(
-                        SubaIcon.person,
-                        size: 100,
-                        color: Colors.blueAccent,
-                      )),
-                      backgroundColor: Colors.white),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "User Name",
-                    style: TextStyle(fontSize: 22, color: Colors.white),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "01 / 02 / 1990",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "user@gmail.com",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "+60123456789",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Container(
-                    decoration: const BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(22),topLeft: Radius.circular(22),),color: Colors.white),
+                  SizedBox(
+                    height: ScreenConfig.safeHeight * 50,
+                    child: Container(
+                      decoration: const BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(22),topLeft: Radius.circular(22),),color: Colors.white),
 
-                    width: ScreenConfig.screenWidth,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 25.0,right: 25),
-                      child: Column(children: [
-                        const SizedBox(height: 20,),
-                        SizedBox(
-                            height: 37,
-                            child: PrimaryButton(onTaps: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (_)=> const EditProfilePage()));
-                            }, text: "Edit Profile",borderRadius: 10,)),
-                        const SizedBox(height: 20,),
-                        SizedBox(
-                            height: 37,
-                            child: PrimaryButton(onTaps: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (_)=> const ChangePasswordPage()));
-                            }, text: "Change Password",borderRadius: 10,)),
-                        const SizedBox(height: 20,),
-                        SizedBox(
-                            height: 37,
-                            child: PrimaryButton(onTaps: (){}, text: "Log Out",borderRadius: 10,))
-                      ],),
+                      width: ScreenConfig.screenWidth,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 25.0,right: 25),
+                        child: Column(children: [
+                          const SizedBox(height: 40,),
+                          SizedBox(
+                              height: 37,
+                              child: PrimaryButton(onTaps: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (_)=> const EditProfilePage()));
+                              }, text: "Edit Profile",borderRadius: 10,)),
+                          const SizedBox(height: 20,),
+                          SizedBox(
+                              height: 37,
+                              child: PrimaryButton(onTaps: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (_)=> const ChangePasswordPage()));
+                              }, text: "Change Password",borderRadius: 10,)),
+                          const SizedBox(height: 20,),
+                          SizedBox(
+                              height: 37,
+                              child: PrimaryButton(onTaps: (){}, text: "Log Out",borderRadius: 10,)),
+                          SizedBox(height: 20,),
+                        ],),
+                      ),
                     ),
                   )
                 ],

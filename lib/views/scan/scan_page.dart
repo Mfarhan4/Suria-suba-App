@@ -147,7 +147,8 @@ class _ScanPageState extends State<ScanPage> {
                               ],
                             ),
                             child: TextField(
-                              onTap: () {
+                              onTap: (){
+                                scanProvider.toggleSerch();
 
                               },
                               textAlign: TextAlign.center,
