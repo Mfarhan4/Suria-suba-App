@@ -112,10 +112,10 @@ class _ContactPageState extends State<ContactPage> {
                 Row(children: [
 
 
-                  Icon(SubaIcon.mail,color: Palette.color,
+                  Icon(SubaIcon.mail,color: Palette.color,size: 18,
 
                   ),
-                  SizedBox(width: 10,),
+                  SizedBox(width: 14,),
                   SizedBox(
                       width: ScreenConfig.blockWidth *90,
                       child: const TextLaunchWidget(url: 'mfarhandilawar4@gmail.com',type: "mail" ,)),
